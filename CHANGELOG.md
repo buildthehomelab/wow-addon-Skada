@@ -1,3 +1,17 @@
+## 1.8.88-forever.1 — WoW Forever-style window
+
+- New `Skada/Modules/ThemeForever.lua` on top of the Bar Display: WoW
+  Forever-style header (timer, mode dropdown, gold title, segment / menu /
+  collapse buttons), thin gold frame (DragonUI filigree when loaded), and a
+  spell breakdown panel docked beside the window on player click.
+- Default for fresh profiles and new windows (opens on Damage); listed as the
+  "WoW Forever" theme; per-window toggle under Bars > General.
+- Damage/Healing columns default to `total (per second)` on players and
+  `total (per second, %)` on spells.
+- Applying any other theme now turns the style off for that window.
+- Button art in `Skada/Media/Textures/forever` (`tools/make_forever_glyphs.py`).
+- `tools/forever_smoke_test.lua`: headless load + fight + panel checks (LuaJIT).
+
 ## Initial commit — Skada-WotLK-Netic
 
 ### Bug fixes

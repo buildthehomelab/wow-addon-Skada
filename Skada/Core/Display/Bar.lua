@@ -2365,6 +2365,7 @@ Skada:RegisterDisplay("Bar Display", "mod_bar_desc", function(L, P, G, _, _, O)
 					snapto = true
 				}
 			}
+			themes["WoW Forever"] = Skada.ForeverTheme -- Modules/ThemeForever.lua
 
 			local function theme_locked()
 				return (applytheme == nil or themes[applytheme])
@@ -2479,6 +2480,8 @@ Skada:RegisterDisplay("Bar Display", "mod_bar_desc", function(L, P, G, _, _, O)
 												local win = windows[i]
 												if win and win.db and (applywindow == "**" or win.db.name == applywindow) then
 													copy(win.db, theme, skipped)
+													-- only the WoW Forever theme turns that style on.
+													win.db.foreverstyle = theme.foreverstyle and true or false
 													Skada:ApplySettings()
 													-- force a redraw so newly applied textures show up
 													-- immediately, without requiring a UI reload.

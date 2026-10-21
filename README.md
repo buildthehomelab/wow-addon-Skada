@@ -1,9 +1,33 @@
-# Skada-WotLK-Netic
+# Skada (WoW Forever style)
 
 ![WoW 3.3.5a](https://img.shields.io/badge/WoW-3.3.5a-1f6feb)
 ![Interface 30300](https://img.shields.io/badge/Interface-30300-0b7285)
-![Version](https://img.shields.io/badge/Version-1.8.88--netic.1-2b8a3e)
+![Version](https://img.shields.io/badge/Version-1.8.88--forever.1-2b8a3e)
 ![License MIT](https://img.shields.io/badge/License-MIT-f08c00)
+
+A fork of [NeticSoul/Skada-WotLK-Netic](https://github.com/NeticSoul/Skada-WotLK-Netic)
+whose default window looks like WoW Forever's built-in damage meter:
+
+- Header: fight timer `[00:04]`, a mode dropdown button, the mode name in
+  gold ("Damage Done"), and three buttons: segment (click: pick a fight,
+  right-click: Current/Overall), menu (right-click: options) and collapse.
+- Rows: rank, name, class-coloured bar, `total (per second)`.
+- Click a player and their spells open in a panel docked beside the window
+  (`total (per second, %)`, pet attacks as `Claw (Cow)`); click the player
+  again or right-click the panel to close it. Shift-click a spell row to link it.
+- Thin gold frame: DragonUI's filigree when DragonUI is loaded, the stock
+  tooltip border otherwise.
+
+Turn it off per window under **Bars > General > WoW Forever style**, or apply
+the "WoW Forever" theme to any window from **Window Skins > Themes**.
+The code is `Skada/Modules/ThemeForever.lua`; the button art is built by
+`tools/make_forever_glyphs.py`. `luajit tools/forever_smoke_test.lua` loads the
+addon against a stubbed 3.3.5a API, runs a short fight and checks the window
+and panel.
+
+The rest of this README is the Netic fork's.
+
+---
 
 Skada is a lightweight modular combat meter for World of Warcraft,
 with multiple views, segmented fights and customizable windows,
