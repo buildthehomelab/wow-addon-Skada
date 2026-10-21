@@ -9,6 +9,7 @@
 ## Title-zhCN: Skada: |cff7fff7f存储|r
 ## Title-zhTW: Skada: |cff7fff7f存儲|r
 ## Notes: Stores Skada segments.
+## Version: 1.8.88-forever.1
 ## Notes-deDE: Speichert Skada-Segmente.
 ## Notes-esES: Tiandas segmentos de Skada.
 ## Notes-esMX: Tiandas segmentos de Skada.
