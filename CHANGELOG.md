@@ -1,3 +1,12 @@
+## 1.8.88-forever.2 — load error fix
+
+- Fix `ThemeForever.lua:529: SetText(): Font not set` on login: the header
+  timer (and the panel rows) now get a font when created, since window
+  creation updates the display before its settings are applied. The error
+  also crashed Blizzard's error window, which then showed nothing.
+- Smoke test stubs now reject `SetText` on a FontString with no font, as the
+  client does.
+
 ## 1.8.88-forever.1 — WoW Forever-style window
 
 - New `Skada/Modules/ThemeForever.lua` on top of the Bar Display: WoW

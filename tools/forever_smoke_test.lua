@@ -94,20 +94,33 @@ function methods:CreateTexture(name, layer)
 	self.__regions[#self.__regions + 1] = t
 	return t
 end
-function methods:CreateFontString(name, layer)
+function methods:CreateFontString(name, layer, template)
 	local t = new_widget("FontString", self, name and name:gsub("%$parent", self.__name or "") or nil)
+	t.__font = template
 	self.__regions[#self.__regions + 1] = t
 	return t
 end
 function methods:GetRegions() return unpack(self.__regions) end
 function methods:GetNumRegions() return #self.__regions end
 function methods:GetChildren() return unpack(self.__children) end
-function methods:SetText(t) self.__text = t; if self.__fs then self.__fs.__text = t end end
+function methods:SetText(t)
+	-- like the client: a bare FontString has no font until SetFont/SetFontObject.
+	if self.__kind == "FontString" and not self.__font then
+		error("<unnamed>:SetText(): Font not set", 2)
+	end
+	self.__text = t
+	if self.__fs then self.__fs.__text = t end
+end
+function methods:SetFont(path) if path then self.__font = path end end
+function methods:SetFontObject(obj) self.__font = obj end
 function methods:GetText() return self.__text end
 function methods:SetFormattedText(f, ...) self.__text = string.format(f, ...) end
 function methods:GetStringWidth() return #(self.__text or "") * 6 end
 function methods:GetFontString()
-	self.__fs = self.__fs or new_widget("FontString", self)
+	if not self.__fs then
+		self.__fs = new_widget("FontString", self)
+		self.__fs.__font = true
+	end
 	return self.__fs
 end
 function methods:SetTexture(t) self.__texture = t end
@@ -168,7 +181,6 @@ local METHOD_NOOPS = {
 	"SetBackdropBorderColor",
 	"SetFrameStrata",
 	"SetTextColor",
-	"SetFont",
 	"SetBlendMode",
 	"SetShadowOffset",
 	"SetScale",
