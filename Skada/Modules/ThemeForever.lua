@@ -313,12 +313,12 @@ local function install(mod)
 		row.bg = row.bar:CreateTexture(nil, "BACKGROUND")
 		row.bg:SetAllPoints(row.bar)
 
-		row.label = row.bar:CreateFontString(nil, "OVERLAY")
+		row.label = row.bar:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
 		row.label:SetPoint("LEFT", row.bar, "LEFT", 3, 0)
 		row.label:SetJustifyH("LEFT")
 		row.label:SetShadowOffset(1, -1)
 
-		row.value = row.bar:CreateFontString(nil, "OVERLAY")
+		row.value = row.bar:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
 		row.value:SetPoint("RIGHT", row.bar, "RIGHT", -3, 0)
 		row.value:SetJustifyH("RIGHT")
 		row.value:SetShadowOffset(1, -1)
@@ -587,7 +587,9 @@ local function install(mod)
 		g.forever = fv
 		local anchor = g.button
 
-		fv.timer = anchor:CreateFontString(nil, "OVERLAY")
+		-- a font object up front: Update can set the time before ApplySettings
+		-- picks the title font, and a fontless SetText errors in the client.
+		fv.timer = anchor:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
 		fv.timer:SetPoint("LEFT", anchor, "LEFT", 7, 0)
 		fv.timer:SetShadowOffset(1, -1)
 
