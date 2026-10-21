@@ -2,7 +2,7 @@
 
 ![WoW 3.3.5a](https://img.shields.io/badge/WoW-3.3.5a-1f6feb)
 ![Interface 30300](https://img.shields.io/badge/Interface-30300-0b7285)
-![Version](https://img.shields.io/badge/Version-1.8.88--forever.1-2b8a3e)
+![Version](https://img.shields.io/badge/Version-1.8.88--forever.2-2b8a3e)
 ![License MIT](https://img.shields.io/badge/License-MIT-f08c00)
 
 A fork of [NeticSoul/Skada-WotLK-Netic](https://github.com/NeticSoul/Skada-WotLK-Netic)
