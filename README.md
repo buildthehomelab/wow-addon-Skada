@@ -42,19 +42,22 @@ for **World of Warcraft 3.3.5a**.
 - Includes targeted fixes for long-standing 3.3.5a issues reported in
   the original upstream repository and still unresolved there
   (see [CHANGELOG.md](CHANGELOG.md)).
-- TWW (5Buttons)-style visual defaults out of the box, ported from
+- The WoW Forever window is the default look (see above). The "TWW
+  (5Buttons)" theme, ported from
   [Skada-Revisited-TWW-skin](https://github.com/5Buttons/Skada-Revisited-TWW-skin)
   by [5Buttons](https://github.com/5Buttons) (Details: The War Within
-  inspired), plus a selectable DragonUI theme as an alternative.
+  inspired), and "DragonUI (Netic)" are selectable under **Window Skins > Themes**.
 
 ## Install
 
-1. Download the [latest release](https://github.com/neticsoul/Skada-WotLK-Netic/releases/latest).
-2. Unzip the downloaded file.
-3. Copy the `Skada` folder to `Interface/AddOns/`.
-4. Optional: copy `SkadaImprovement` and/or `SkadaStorage` if you want
+This repository has no releases yet, so install from a clone:
+
+1. Clone or download this repository
+   (`git clone https://github.com/buildthehomelab/wow-addon-Skada.git`).
+2. Copy the `Skada` folder to `Interface/AddOns/`.
+3. Optional: copy `SkadaImprovement` and/or `SkadaStorage` if you want
   those extra modules.
-5. On the character selection screen, open **AddOns** and verify all
+4. On the character selection screen, open **AddOns** and verify all
   installed Skada modules are enabled.
 
 ### Migration note
